@@ -29,12 +29,17 @@ class Ui_mainWindow(object):
         font.setPointSize(15)
         self.pushButton_addTask.setFont(font)
         self.pushButton_addTask.setStyleSheet("color: rgb(255, 255, 255);\n"
-"background-color: rgb(255, 51, 102);")
+"background-color: rgb(255, 51, 102); \n"
+"border-radius: 5px;")
         self.pushButton_addTask.setObjectName("pushButton_addTask")
         self.listWidget = QtWidgets.QListWidget(self.centralwidget)
         self.listWidget.setGeometry(QtCore.QRect(20, 50, 451, 211))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.listWidget.setFont(font)
         self.listWidget.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"color: rgb(0, 0, 0);")
+"color: rgb(0, 0, 0);\n"
+"border-radius: 5px;")
         self.listWidget.setObjectName("listWidget")
         self.pushButton_delete = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_delete.setGeometry(QtCore.QRect(160, 270, 181, 21))
@@ -44,7 +49,8 @@ class Ui_mainWindow(object):
         font.setWeight(50)
         self.pushButton_delete.setFont(font)
         self.pushButton_delete.setStyleSheet("color: rgb(255, 255, 255);\n"
-"background-color: rgb(255, 51, 102);")
+"background-color: rgb(255, 51, 102);\n"
+"border-radius: 5px;")
         self.pushButton_delete.setObjectName("pushButton_delete")
         self.pushButton_delete_all = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_delete_all.setGeometry(QtCore.QRect(190, 300, 121, 21))
@@ -52,7 +58,8 @@ class Ui_mainWindow(object):
         font.setPointSize(15)
         self.pushButton_delete_all.setFont(font)
         self.pushButton_delete_all.setStyleSheet("color: rgb(255, 255, 255);\n"
-"background-color: rgb(255, 51, 102);")
+"background-color: rgb(255, 51, 102);\n"
+"border-radius: 5px;")
         self.pushButton_delete_all.setObjectName("pushButton_delete_all")
         mainWindow.setCentralWidget(self.centralwidget)
 

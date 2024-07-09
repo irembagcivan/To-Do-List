@@ -47,7 +47,8 @@ color: rgb(0, 0, 0);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(255, 51, 102);</string>
+background-color: rgb(255, 51, 102); 
+border-radius: 5px;</string>
     </property>
     <property name="text">
      <string>Add Task</string>
@@ -62,9 +63,15 @@ background-color: rgb(255, 51, 102);</string>
       <height>211</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);</string>
+color: rgb(0, 0, 0);
+border-radius: 5px;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_delete">
@@ -85,7 +92,8 @@ color: rgb(0, 0, 0);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(255, 51, 102);</string>
+background-color: rgb(255, 51, 102);
+border-radius: 5px;</string>
     </property>
     <property name="text">
      <string>Delete Completed Tasks</string>
@@ -107,7 +115,8 @@ background-color: rgb(255, 51, 102);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(255, 51, 102);</string>
+background-color: rgb(255, 51, 102);
+border-radius: 5px;</string>
     </property>
     <property name="text">
      <string>Delete All Tasks</string>
