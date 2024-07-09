@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets, QtCore
 from interface import Ui_mainWindow
+from collections import Counter
 
 class ToDoList_interface(QtWidgets.QMainWindow, Ui_mainWindow):
     def __init__(self):
@@ -25,7 +26,16 @@ class ToDoList_interface(QtWidgets.QMainWindow, Ui_mainWindow):
             QtWidgets.QMessageBox.warning(self, "Warning!", "Task cannot be empty!")
 
     def delete_completed_tasks(self):
-        pass
+        items_to_delete = []
+        
+        for index in range(self.listWidget.count()):
+            item = self.listWidget.item(index)
+            if item.checkState() == QtCore.Qt.Checked:
+                items_to_delete.append(index)
+
+        for index in reversed(items_to_delete):
+            self.listWidget.takeItem(index)
+
 
     def delete_all_tasks(self):
-        pass
+        self.listWidget.clear()
