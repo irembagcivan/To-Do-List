@@ -11,6 +11,7 @@ class ToDoList_interface(QtWidgets.QMainWindow, Ui_mainWindow):
         self.pushButton_addTask.clicked.connect(self.add_task)
         self.pushButton_delete.clicked.connect(self.delete_completed_tasks)
         self.pushButton_delete_all.clicked.connect(self.delete_all_tasks)
+        self.listWidget.itemChanged.connect(self.mark_task_completed)
     
     def add_task(self):
         task_text = self.lineEdit_tasks.text().strip()
@@ -36,6 +37,13 @@ class ToDoList_interface(QtWidgets.QMainWindow, Ui_mainWindow):
         for index in reversed(items_to_delete):
             self.listWidget.takeItem(index)
 
-
     def delete_all_tasks(self):
         self.listWidget.clear()
+
+    def mark_task_completed(self, item):
+        if item.checkState() == QtCore.Qt.Checked:
+            item.setForeground(QtCore.Qt.gray)
+            item.setBackground(QtCore.Qt.lightGray)
+        else:
+            item.setForeground(QtCore.Qt.black)
+            item.setBackground(QtCore.Qt.white)
