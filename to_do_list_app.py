@@ -1,6 +1,5 @@
 from PyQt5 import QtWidgets, QtCore
 from interface import Ui_mainWindow
-from collections import Counter
 
 class ToDoList_interface(QtWidgets.QMainWindow, Ui_mainWindow):
     def __init__(self):
