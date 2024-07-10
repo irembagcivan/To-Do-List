@@ -1,6 +1,8 @@
 from PyQt5 import QtWidgets, QtCore
 from interface import Ui_mainWindow
 
+FILE_PATH = "tasks.txt"
+
 class ToDoList_interface(QtWidgets.QMainWindow, Ui_mainWindow):
     def __init__(self):
         super().__init__()
@@ -46,3 +48,15 @@ class ToDoList_interface(QtWidgets.QMainWindow, Ui_mainWindow):
         else:
             item.setForeground(QtCore.Qt.black)
             item.setBackground(QtCore.Qt.white)
+
+    def save_tasks(self):
+        with open(FILE_PATH, 'w') as file:
+            for i in range(self.listWidget.count()):
+                item = self.listWidget.item(i)
+                task_text = item.text()
+                if item.checkState() == QtCore.Qt.Checked:
+                    file.write(f"[x] {task_text}\n")
+                else:
+                    file.write(f"[ ] {task_text}\n")
+
+   
