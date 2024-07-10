@@ -59,4 +59,29 @@ class ToDoList_interface(QtWidgets.QMainWindow, Ui_mainWindow):
                 else:
                     file.write(f"[ ] {task_text}\n")
 
-   
+    def load_tasks(self):
+        try:
+            with open(FILE_PATH, 'r') as file:
+                for line in file:
+                    line = line.strip()
+                    if line.startswith("[x]"):
+                        task_text = line[4:]
+                        item = QtWidgets.QListWidgetItem(task_text)
+                        item.setFlags(item.flags() | QtCore.Qt.ItemIsUserCheckable)
+                        item.setCheckState(QtCore.Qt.Checked)
+                        item.setForeground(QtCore.Qt.gray)
+                        item.setBackground(QtCore.Qt.lightGray)
+                    else:
+                        task_text = line[4:]
+                        item = QtWidgets.QListWidgetItem(task_text)
+                        item.setFlags(item.flags() | QtCore.Qt.ItemIsUserCheckable)
+                        item.setCheckState(QtCore.Qt.Unchecked)
+                        item.setForeground(QtCore.Qt.black)
+                        item.setBackground(QtCore.Qt.white)
+                    self.listWidget.addItem(item)
+        except FileNotFoundError:
+            pass
+
+    def closeEvent(self, event):
+        self.save_tasks()
+        event.accept()
